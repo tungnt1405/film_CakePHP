@@ -1,8 +1,5 @@
 # WEB XEM PHIM ĐƯỢC XÂY DỰNG DỰA TRÊN FRAMEWORK CAKEPHP
 
-![Phiên bản](CakePHP 4.3)
-[![PHP)](>=7.2)
-
 ## Các bước cài đặt chương trình
 0. Chuẩn bị xampp và composer
 1. pull code từ nhánh master
