@@ -47,6 +47,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
+$cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +55,7 @@ endif;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        CakePHP: the rapid development PHP framework:
+        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
@@ -74,7 +75,7 @@ endif;
                 <img alt="CakePHP" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
             </a>
             <h1>
-                Welcome to CakePHP <?= h(Configure::version()) ?> Strawberry (🍓)
+                Welcome to CakePHP <?= Configure::version() ?> Strawberry (🍓)
             </h1>
         </div>
     </header>
@@ -99,6 +100,16 @@ endif;
                     </div>
                 </div>
                 <div class="row">
+                    <div class="column">
+                        <h4>Trang đăng nhập</h4>
+                        <ul>
+                        <?php if (version_compare(PHP_VERSION, '7.2.0', '>=')) : ?>
+                            <li class="bullet success"><?= $this->Html->link('Trang chủ',['_name'=>'index'],['style'=>'text-decoration:none'])?></li>
+                            <li class="bullet success"><?= $this->Html->link('Profile',['_name'=>'member_profile','id'=> $member_info['id']??1],['style'=>'text-decoration:none'])?></li>
+                            <li class="bullet success"><?= $this->Html->link('Admin',['_name'=>'admin_dashboard'],['style'=>'text-decoration:none'])?></li>
+                        <?php endif; ?>
+                        </ul>
+                    </div>
                     <div class="column">
                         <h4>Environment</h4>
                         <ul>
@@ -146,7 +157,7 @@ endif;
 
                         <?php $settings = Cache::getConfig('_cake_core_'); ?>
                         <?php if (!empty($settings)) : ?>
-                            <li class="bullet success">The <em><?= h($settings['className']) ?></em> is being used for core caching. To change the config edit config/app.php</li>
+                            <li class="bullet success">The <em><?= $settings['className'] ?>Engine</em> is being used for core caching. To change the config edit config/app.php</li>
                         <?php else : ?>
                             <li class="bullet problem">Your cache is NOT working. Please check the settings in config/app.php</li>
                         <?php endif; ?>
@@ -164,7 +175,7 @@ endif;
                         <?php if ($result['connected']) : ?>
                             <li class="bullet success">CakePHP is able to connect to the database.</li>
                         <?php else : ?>
-                            <li class="bullet problem">CakePHP is NOT able to connect to the database.<br /><?= h($result['error']) ?></li>
+                            <li class="bullet problem">CakePHP is NOT able to connect to the database.<br /><?= $result['error'] ?></li>
                         <?php endif; ?>
                         </ul>
                     </div>

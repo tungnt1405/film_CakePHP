@@ -1,0 +1,125 @@
+.payment{
+    color: #fff;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+.payment .payment-order{
+    position: relative;
+    padding: 10px 25px;
+    border: 1px solid black;
+    margin: 0 25px;
+}
+.payment .payment-order > span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    margin-top: -22px;
+}
+.payment-order:not(:last-child):after {
+    content: '';
+    height: 8px;
+    background: #fff;
+    width: 67px;
+    position: absolute;
+    right: -145px;
+    top: 36%;
+}
+.payment-order:not(:last-child):before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 55%;
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #fff;
+    right: -165px;
+    transform: translateY(-50%);
+}
+
+.payment-active{
+    background-color: yellowgreen !important;
+    color: #fff !important;
+}
+
+.payment--title{
+    color:#fff; 
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.payment--info,.payment--checkout, .payment-notify{
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 20px 10px;
+}
+.payment--info{
+    width: 70%;
+    float: left;
+}
+.payment--checkout{
+    float: right;
+    width: 25%;
+    font-weight: bold;
+}
+.payment--checkout > p{
+    color: #000 !important
+}
+.payment--checkout .payment-amount{
+    float: right;
+}
+.payment--info-title{
+    text-transform: uppercase;
+    position: relative;
+}
+.payment--info-title::after{
+    content: '';
+    position: absolute;
+    width: 300px;
+    display: block;
+    border-bottom: 2px solid #000;
+    margin-top: 5px;
+}
+.input--required{
+    color: red;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+#overload {
+    position: absolute; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.loader {
+    position: absolute;
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,287 @@
+body,
+html {
+    height: 100%;
+}
+/* workaround modal-open padding issue */
+
+body.modal-open {
+    padding-right: 0 !important;
+}
+
+#sidebar {
+    padding-left: 0;
+    padding-top: 0;
+    background-color: #212529;
+}
+
+/*
+ * CSS customer
+ *
+ *------------------------------------
+*/
+
+.w-100 {
+    width: 100%;
+}
+.w-95 {
+    width: 95%;
+}
+.w-75 {
+    width: 75%;
+}
+.w-50 {
+    width: 50%;
+}
+.btn-add,
+.btn-down {
+    width: 100px;
+}
+.dropdown-item {
+    margin: 0 2px;
+    border-bottom: 1px dotted #000;
+}
+.dropdown-item:hover {
+    color: #fff;
+    background-color: #0d6efd;
+}
+.dropdown-item:first-child {
+    margin-top: 0;
+}
+.dropdown-item:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin-bottom: 5px;
+}
+.nav-link {
+    color: white;
+    padding: 8px 16px;
+}
+.nav-link.active {
+    background-color: #0d6efd;
+    border-radius: 5px;
+}
+
+#file {
+    border: 2px dashed #92b0b3 !important;
+    cursor: pointer;
+}
+.files:before {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    content: attr(data-before);
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+#file {
+    display: inline-block;
+    width: 100%;
+    padding: 95px 0 0 100%;
+    background: url("../../img/download.png") top center no-repeat #fff;
+    background-size: 55px 55px;
+}
+
+label.error,
+.error-message {
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+}
+th {
+    text-align: center;
+}
+td {
+    font-size: 16px;
+    font-weight: 400;
+}
+.td-center {
+    text-align: center;
+    vertical-align: middle;
+}
+.user_avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.show_img_append {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.search-icon {
+    width: 80px;
+    cursor: pointer;
+}
+.search-icon:hover {
+    background-color: #5584ad;
+}
+#query {
+    text-align: center;
+}
+
+.query {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    transition: all 0.2s;
+}
+.input-search {
+    margin-bottom: 5px;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    min-width: max-content;
+}
+
+#movie_scroll.table-responsive::-webkit-scrollbar {
+    height: 10px;
+}
+#movie_scroll.table-responsive::-webkit-scrollbar-track {
+    background: #fff;
+}
+#movie_scroll.table-responsive::-webkit-scrollbar-thumb {
+    /* background: #d8d6d6; */
+    background: rgb(240, 238, 238);
+    border-radius: 5px;
+}
+#movie_scroll.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+#desc_respon {
+    width: 25em;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#desc_respon::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border: 1px solid #d5d5d5;
+}
+#desc_respon::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#desc_respon::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 5px;
+}
+#movie_table.table tr td #desc_respon::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+/* #cancel a:hover {
+    color: white;
+} */
+/*
+ * Off Canvas at medium breakpoint
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 48em) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -33%;
+    }
+    .row-offcanvas-left.active {
+        left: 33%;
+        margin-left: -6px;
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 33%;
+        height: 100%;
+    }
+}
+/*
+ * Off Canvas wider at sm breakpoint
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 34em) {
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -45%;
+    }
+    .row-offcanvas-left.active {
+        left: 45%;
+        margin-left: -6px;
+    }
+    .sidebar-offcanvas {
+        width: 45%;
+    }
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card-block .rotate {
+    z-index: 8;
+    float: right;
+    height: 100%;
+}
+
+.card-block .rotate i {
+    color: rgba(20, 20, 20, 0.15);
+    position: absolute;
+    left: 0;
+    left: auto;
+    right: -10px;
+    bottom: 0;
+    display: block;
+    -webkit-transform: rotate(-44deg);
+    -moz-transform: rotate(-44deg);
+    -o-transform: rotate(-44deg);
+    -ms-transform: rotate(-44deg);
+    transform: rotate(-44deg);
+}
+
+@media screen and (max-width: 1280px) {
+    #edit-btn.btn {
+        margin-bottom: 3px;
+    }
+}
+@media screen and (max-width: 1085px) {
+    #edit-btn.btn {
+        margin-bottom: 3px;
+    }
+}
+@media all and (max-width: 768px) {
+    .search-icon {
+        margin-top: 5px;
+        width: 100%;
+        border-radius: 7px;
+        transition: 1s;
+    }
+}
