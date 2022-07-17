@@ -5,7 +5,7 @@
 1. pull code từ nhánh master
 2. Checkout sang nhánh develop để pull code chính về
 3. Sau khi đã lấy code từ nhánh develop về thì chạy lệnh 
-``` composer update```
+``` composer update``` (version php >= 7.2)
 hoặc
 ``` composer install ``` (version php >= 8.0.2 mới dùng)
 4. Vào thư mục config để tạo file app_local.php từ app_local.example.php
