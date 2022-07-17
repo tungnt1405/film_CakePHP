@@ -23,6 +23,7 @@ return [
      * - salt - A random string used in security hashing methods.
      *   The salt value is also used as the encryption key.
      *   You should treat it as extremely sensitive data.
+     *   exmaple of __SALT: 2113dc9fe9059651fe6020eaff914268ac8c94c7b2908f8f080c0f8b88c6d120
      */
     'Security' => [
         'salt' => env('SECURITY_SALT', '__SALT__'),
