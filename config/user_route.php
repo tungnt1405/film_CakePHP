@@ -1,10 +1,8 @@
 <?php
 
-use Cake\Routing\Router;
 use Cake\Routing\RouteBuilder;
 
 $routes->scope('/', function (RouteBuilder $builder) {
-
     $builder->connect('/home', ['controller' => 'Pages', 'action' => 'display', 'home'], ['_name' => 'home']);
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'index'], ['_name' => 'index']);
     $builder->connect('/pages/*', 'Pages::display');
@@ -74,5 +72,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/ajaxPay', ["controller" => "Movies", "action" => "ajaxPay"], ["_name" => "ajaxPay"]);
     // $builder->connect('/card', ["controller" => "Details", "action" => "card"], ["_name" => "card"]);
     $builder->connect('/result', ["controller" => "Details", "action" => "result"], ["_name" => "result"]);
+
+    $builder->connect('/sitemap.xml',['controller'=>'Sitemaps','action'=>'index']);
+
     $builder->fallbacks();
 });
